@@ -1,6 +1,8 @@
 package tests;
 
 import data.FormKeys;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -32,6 +34,7 @@ public class PracticeFormTests extends TestBase {
             emptyField = " ";
 
     @Test
+    @Tag("registration")
     void fillFormTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -61,6 +64,7 @@ public class PracticeFormTests extends TestBase {
     }
 
     @Test
+    @Tag("registration")
     void minSuccessfulFillFormTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -82,6 +86,10 @@ public class PracticeFormTests extends TestBase {
     }
 
     @Test
+    @Tags({
+            @Tag("registration"),
+            @Tag("negative")
+    })
     void validationFormTest() {
         registrationPage.openPage()
                 .pressSubmit();
