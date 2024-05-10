@@ -135,7 +135,7 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Проверяем, что введенное значение {value} совпадает с таблицей {key}")
+    @Step("Проверяем, что введенное значение - {value} совпадает с табличным - {key}")
     public RegistrationPage checkResult(String key, String value) {
         formComponent.checkForm(key, value);
 
