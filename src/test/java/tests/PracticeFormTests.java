@@ -1,6 +1,11 @@
 package tests;
 
 import data.FormKeys;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
@@ -35,6 +40,10 @@ public class PracticeFormTests extends TestBase {
 
     @Test
     @Tag("registration")
+    @Feature("Форма регистрации")
+    @Story("Заполнение формы")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Отправка формы со всеми заполненными полями")
     void fillFormTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -65,6 +74,10 @@ public class PracticeFormTests extends TestBase {
 
     @Test
     @Tag("registration")
+    @Feature("Форма регистрации")
+    @Story("Заполнение формы")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Отправка формы с обязательными заполненными полями")
     void minSuccessfulFillFormTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -90,6 +103,10 @@ public class PracticeFormTests extends TestBase {
             @Tag("registration"),
             @Tag("negative")
     })
+    @Feature("Форма регистрации")
+    @Story("Заполнение формы")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка валидации обязательных полей")
     void validationFormTest() {
         registrationPage.openPage()
                 .pressSubmit();
